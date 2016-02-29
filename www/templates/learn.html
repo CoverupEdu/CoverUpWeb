@@ -1,12 +1,11 @@
 <ion-view view-title="Learn">
-    <ion-content class="content-positive">
-        <div class="img-holder">
-            <img id = "imagecont" class="image" on-tap="addControl($event)" ng-src="{{photoService.image}}">
-            <div class="labels">
-                <button ng-repeat="label in labels" class="button energized button-icon icon ion-ios-circle-filled label" ng-click="openPopover($event, $index)" ng-style="{left: (label.x+'%'), top: (label.y+'%')}"></button>
-            </div>
-            
-			<button class="button energized button-icon icon ion-ios-circle-filled label" ng-click="swapBool1()" ng-style="{left: ('10%'), top: ('10%')}"></button>
-        </div>
-    </ion-content>
+   <ion-content class="content-positive">
+       <div class="img-holder">
+           <img id = "imagecont" class="image" on-tap="addControl($event)" ng-src="{{photoService.image}}">
+           <div class="labels">
+               <button ng-repeat="label in labels" class="button energized button-icon icon ion-ios-circle-filled label" ng-click="openPopover($event, $index)" ng-style="{left: (label.x+'%'), top: (label.y+'%')}"></button>
+           </div>
+            <button class="button energized button-icon icon ion-ios-circle-filled label" ng-click="swapCreateNew()" ng-style="{left: ('10%'), top: ('10%')}"></button>
+       </div>
+   </ion-content>
 </ion-view>

@@ -1,0 +1,9 @@
+<ion-view view-title="Photo">
+    <ion-content class="content-positive">
+        <button class="button button-full button-energized item" ng-click="takePhoto()">From Camera</button>
+        <button class="button button-full button-energized item" ng-click="takePhotoFromGallery()">From Gallery</button>
+        <button class="button button-full button-energized item" ng-click="setToDefaultPhoto()">Set to Default Photo (debug)</button>
+        <img ng-src="{{photo}}" id="photo-preview" />
+    </ion-content>
+    <div class="bar bar-footer bar-light"><a class="button button-energized icon-right ion-arrow-right-c" href="#/learn">Ready!</a></div>
+</ion-view>
