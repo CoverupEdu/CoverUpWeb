@@ -20,7 +20,7 @@ app.controller('learn-controller', ['$rootScope', '$ionicScrollDelegate', '$scop
 	$scope.menu = $ionicPopover.fromTemplate(menu, {
         scope: $scope
     });
-	
+    
 	$scope.sendInput = function(curl) {
 		$rootScope.curLabel = curl;
 	}

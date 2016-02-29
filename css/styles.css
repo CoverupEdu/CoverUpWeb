@@ -1,0 +1,53 @@
+.spot {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: transparent !important;
+    border: 0 !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    display: inline-block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.spot-holder {
+    position: absolute;
+    margin-left: -5vw;
+    margin-top: -5vw;
+    width: 10vw;
+    height: 10vw;
+}
+
+.img-holder {
+    position: absolute;
+    left: 0%;
+    width: 100%;
+}
+
+.learn-img-holder {
+    position: absolute;
+    left: 0%;
+    width: 100%;
+}
+
+.image {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+}
+
+.spot::after {
+	background-image: url("../img/spot.svg");
+    background-size: 100% !important;
+    margin-left: -50% !important;
+    margin-top: -50% !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.logo {
+    position: relative;
+    height: 50px;
+}
