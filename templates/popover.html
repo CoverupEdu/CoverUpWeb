@@ -1,10 +1,10 @@
 <ion-popover-view class="label-popover">
     <h3 ng-hide="labelEdit" class="title">{{labels[curIndex].label}}</h3>
     <input type="text" ng-show="labelEdit" ng-model="curLabel" ng-change="sendInput(curLabel)">
-    <button     class="button energized button-icon icon ion-ios-circle-filled" 
+    <button     class="button energized button-icon icon ion-edit" 
                 ng-click="swapLabelEdit(true); curLabel = labels[curIndex].label || $scope.nullString" 
                 ng-style={"margin-right":"30px"}></button>
-    <button     class="button energized button-icon icon ion-ios-circle-filled" 
+    <button     class="button energized button-icon icon ion-trash-a" 
                 ng-click="swapLabelEdit(false); deleteLabel()" 
                 ng-style={"margin-left":"30px"}></button>
 </ion-popover-view>;
