@@ -4,7 +4,6 @@
 app.controller('learn-controller', ['$rootScope', '$ionicScrollDelegate', '$scope', '$ionicPopover', 'Photo', 'Labels', function($rootScope, $ionicScrollDelegate, $scope, $ionicPopover, Photo, Labels) {
     $scope.labels = Labels.labels;
     $scope.photoService = Photo;
-	$scope.createNew = false;
 	$scope.labelEdit = false;
 	$scope.curIndex = 0;
 	$scope.nullString = "";
@@ -34,9 +33,6 @@ app.controller('learn-controller', ['$rootScope', '$ionicScrollDelegate', '$scop
 		$scope.labels.splice($scope.curIndex, 1);
 	}
 	
-	$scope.swapCreateNew = function() {
-        $scope.createNew = !$scope.createNew;
-    }
     
     $scope.swapLabelEdit = function(boole) {
         if (boole) {$scope.labelEdit = !$scope.labelEdit;}
@@ -45,13 +41,10 @@ app.controller('learn-controller', ['$rootScope', '$ionicScrollDelegate', '$scop
     }
 	
 	$scope.addControl = function(event) {
-		if ($scope.createNew) {
-			$scope.createNew = false;
-			$scope.labelEdit = true;
-			$scope.xpos = (event.gesture.touches[0].pageX - 20 + $ionicScrollDelegate.getScrollPosition().left) / (0.01 * document.getElementById('imagecont').getBoundingClientRect().width);
-			$scope.ypos = (event.gesture.touches[0].pageY - 45 - 23 + $ionicScrollDelegate.getScrollPosition().top) / (0.01 * document.getElementById('imagecont').getBoundingClientRect().height);
-			Labels.addLabel($scope.xpos, $scope.ypos, "");
-		}
+        $scope.labelEdit = true;
+        $scope.xpos = (event.gesture.touches[0].pageX - 20 + $ionicScrollDelegate.getScrollPosition().left) / (0.01 * document.getElementById('imagecont').getBoundingClientRect().width);
+        $scope.ypos = (event.gesture.touches[0].pageY - 45 - 23 + $ionicScrollDelegate.getScrollPosition().top) / (0.01 * document.getElementById('imagecont').getBoundingClientRect().height);
+        Labels.addLabel($scope.xpos, $scope.ypos, "");
 	}
 	
     $scope.openPopover = function(event, index) {
