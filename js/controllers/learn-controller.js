@@ -4,7 +4,7 @@
 app.controller('learn-controller', ['$rootScope', '$ionicScrollDelegate', '$scope', '$ionicPopover', 'Photo', 'Labels', function($rootScope, $ionicScrollDelegate, $scope, $ionicPopover, Photo, Labels) {
     $scope.labels = Labels.labels;
     $scope.photoService = Photo;
-	$scope.labelEdit = false;
+	$rootScope.labelEdit = false;
 	$scope.curIndex = 0;
 	$scope.nullString = "";
 	$rootScope.curLabel;
@@ -24,33 +24,37 @@ app.controller('learn-controller', ['$rootScope', '$ionicScrollDelegate', '$scop
    });
     */
 	
-	$scope.sendInput = function(curl) {
-		$rootScope.curLabel = curl;
-	}
+	$scope.$on('popover.hidden', function() {
+		$rootScope.labelEdit = false;
+	});
 	
 	$scope.deleteLabel = function() {
 		$scope.popover.hide();
 		$scope.labels.splice($scope.curIndex, 1);
 	}
 	
-    
     $scope.swapLabelEdit = function(boole) {
-        if (boole) {$scope.labelEdit = !$scope.labelEdit;}
-        else {$scope.labelEdit = false;}
+        if (boole) {$rootScope.labelEdit = !$rootScope.labelEdit;}
+        else {$rootScope.labelEdit = false;}
         $scope.labels[$scope.curIndex].label = $rootScope.curLabel;
     }
 	
+	$scope.eventManage = function($event) {
+		$scope.addControl($event); 
+		//popup?
+	}
+	
 	$scope.addControl = function(event) {
-        $scope.labelEdit = true;
-        $scope.xpos = (event.gesture.touches[0].pageX - 20 + $ionicScrollDelegate.getScrollPosition().left) / (0.01 * document.getElementById('imagecont').getBoundingClientRect().width);
-        $scope.ypos = (event.gesture.touches[0].pageY - 45 - 23 + $ionicScrollDelegate.getScrollPosition().top) / (0.01 * document.getElementById('imagecont').getBoundingClientRect().height);
+        $rootScope.labelEdit = true;
+		$rootScope.insReset();
+        $scope.xpos = (event.offsetX - 20) / (0.01 * document.getElementById('imagecont').getBoundingClientRect().width);
+        $scope.ypos = (event.offsetY - 23) / (0.01 * document.getElementById('imagecont').getBoundingClientRect().height);
         Labels.addLabel($scope.xpos, $scope.ypos, "");
 	}
 	
     $scope.openPopover = function(event, index) {
         $scope.index = {value:index};
 		$scope.curIndex = index;
-		$rootScope.curLabel = $scope.labels[index].label;
         $scope.popover.show(event);
     }
 }])

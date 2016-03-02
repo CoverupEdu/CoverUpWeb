@@ -41,3 +41,20 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/home');
 });
+
+app.controller('popover-controller', function($scope, $ionicPopover, $rootScope) {
+	$scope.insLabel;
+
+	$rootScope.editButton = function() {
+		$rootScope.curLabel = $scope.insLabel;
+		if (!$rootScope.labelEdit) {
+			$scope.insLabel = $scope.labels[$scope.curIndex].label;
+		}
+		else {$scope.labels[$scope.curIndex].label = $rootScope.curLabel;}
+		$rootScope.labelEdit = !$rootScope.labelEdit;
+	};
+	
+	$rootScope.insReset = function() {
+		$scope.insLabel = "";
+	}
+});
