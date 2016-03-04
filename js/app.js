@@ -38,6 +38,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'templates/learn.html',
         controller: 'learn-controller'
     })
+    .state('study', {
+        url: '/study',
+        templateUrl: 'templates/study.html',
+        controller: 'Study-controller'
+    })
 
     $urlRouterProvider.otherwise('/home');
 });
