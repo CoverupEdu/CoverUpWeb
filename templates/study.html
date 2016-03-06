@@ -1,10 +1,8 @@
-<ion-view view-title="Study">
-    <ion-content class="content-positive">
-        <div class="img-holder">
-            <img id="imagecont" class="image" ng-src="{{photoService.image}}">
-            <div class="labels">
-                <button ng-repeat="label in labels" class="button energized button-icon icon ion-ios-circle-filled label" ng-click="openPopover($event, $index)" ng-style="{left: (label.x+'%'), top: (label.y+'%')}"></button>
-            </div>
-        </div>
-    </ion-content>
+<ion-view view-title="Study" resize ng-app="app">
+	<ion-content class="content-positive">
+		<div id="imghld2" class="img-holder">
+			<img id="imagecont2" class="image" ng-click="console.log('click') "ng-src="{{photoService.image}}">
+			<button ng-repeat="label in labels" class="button energized button-icon icon ion-ios-circle-filled label" ng-init="setStyle($index)" ng-click="openPopover($event, $index)" ng-style="labelStyle[$index]"></button>
+		</div>
+	</ion-content>
 </ion-view>
