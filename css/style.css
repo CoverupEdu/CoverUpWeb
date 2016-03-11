@@ -1,1 +1,63 @@
 /* Empty. Add your own CSS if you like */
+
+/*Styling for ionic headers on all pages*/
+
+.bar.bar-coverupOrange {
+    border-color: #FFFFFF;
+    background-color: #F79522;
+    background-image: linear-gradient(0deg, #FFFFFF, #FFFFFF 50%, transparent 50%);
+    color: #FFFFFF; 
+}
+.bar.bar-coverupOrange.title {
+    color: #FFFFFF; 
+}
+.bar.bar-coverupOrange.footer {
+    background-image: linear-gradient(180deg, #FFFFFF, #FFFFFF 50%, transparent 50%);
+}
+        
+.button.button-coverupOrange {
+    border-color: transparent;
+    background-color: #F79522;
+    color: #FFFFFF; 
+}
+.button.button-coverupOrange:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+.button.button-coverupOrange.active, .button.button-coverupOrange.activated {
+    background-color: #F79522;
+}
+.button.button-coverupOrange.button-clear {
+    border-color: transparent;
+    background: none;
+    box-shadow: none;
+    color: #FFFFFF;
+    font-size: 17px; 
+}
+.button.button-coverupOrange.button-bold {
+    font-weight: 400; /*To match the font weight of the 'Ready!' button font with the back button font (hardly noticeable, but there is a slight difference)*/
+} 
+.button.button-coverupOrange.button-icon {
+    border-color: transparent;
+    background: none; }
+    
+.button.ion-ios-arrow-forward:before {
+    font-size: 25px !important; /*Resize arrow in Ready! button*/
+}
+
+/*Styling functions for button positioning*/
+
+.button.pull-left { /*.pull-left and .pull-center are used for aligning buttons on home page footer...   .pull-right is already included by ionic in their css file*/
+    position: absolute;
+    top: 5px;
+    left: 5px !important;
+    bottom: 5px;
+}
+
+.button.pull-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+       

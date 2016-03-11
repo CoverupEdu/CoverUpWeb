@@ -45,6 +45,7 @@ app.controller('modify-controller', ['$rootScope', '$window', '$ionicScrollDeleg
 	$scope.deleteLabel = function() {
 		$scope.popover.hide();
 		$scope.labels.splice($scope.curIndex, 1);
+		$scope.setStyleAll();
 	}
 	
     $scope.swapLabelEdit = function(boole) {

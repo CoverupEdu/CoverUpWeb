@@ -1,9 +1,13 @@
-<ion-view view-title="Modify" resize ng-app="app">
-	<ion-content class="content-positive">
+<ion-view view-title="Modify"  resize ng-app="app">
+  <ion-nav-buttons side="right">
+      <a class="button button-clear button-bold button-coverupOrange icon-right ion-ios-arrow-forward" href="#/study">
+          Ready!&nbsp;
+      </a>
+</ion-nav-buttons>
+   <ion-content class="content-positive">
 		<div id="imghld" class="img-holder">
 			<img id="imagecont" class="image" ng-click="eventManage($event)" ng-src="{{photoService.image}}">
 			<button ng-repeat="label in labels" class="button energized button-icon icon ion-ios-circle-filled label" ng-init="setStyle($index)" ng-click="openPopover($event, $index)" ng-style="labelStyle[$index]"></button>
 		</div>
 	</ion-content>
-	<div class="bar bar-footer bar-light"><a class="button button-energized icon-right ion-arrow-right-c" href="#/study">Ready!</a></div>
 </ion-view>
