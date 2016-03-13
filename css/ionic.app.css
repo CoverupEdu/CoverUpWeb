@@ -8723,10 +8723,10 @@ progress {
   .button.button-energized {
     border-color: transparent;
     background-color: #F79522;
-+   color: #fff;
-+   margin: auto;
-+   margin-top: 10px;
-+   border-radius: 8px; }
+    color: #fff;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 8px; }
     .button.button-energized:hover {
       color: #fff;
       text-decoration: none; }
@@ -8735,7 +8735,7 @@ progress {
     .button.button-energized.button-clear {
       border-color: transparent;
       background: none;
-      box-shadow: none;
+      box-shadow: nzone;
       color: #ff6600; }
     .button.button-energized.button-icon {
       border-color: transparent;
