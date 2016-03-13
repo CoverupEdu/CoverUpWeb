@@ -3400,7 +3400,8 @@ body.grade-c {
   -moz-text-size-adjust: none;
   text-size-adjust: none;
   -webkit-transform-origin: left top;
-  transform-origin: left top; }
+  transform-origin: left top;
+  margin-top: 35px;}
 
 /**
  * Set ms-viewport to prevent MS "page squish" and allow fluid scrolling
@@ -8721,8 +8722,11 @@ progress {
         color: #fff; }
   .button.button-energized {
     border-color: transparent;
-    background-color: #ff6600;
-    color: #fff; }
+    background-color: #F79522;
++   color: #fff;
++   margin: auto;
++   margin-top: 10px;
++   border-radius: 8px; }
     .button.button-energized:hover {
       color: #fff;
       text-decoration: none; }
@@ -8887,7 +8891,7 @@ button.button-block,
 button.button-full,
 .button-full > button.button,
 input.button.button-block {
-  width: 100%; }
+  width: 70%; }
 
 a.button {
   text-decoration: none; }
@@ -9737,7 +9741,7 @@ a.button {
   line-height: 35px; }
 
 .content-positive {
-  background-color: #24a1d4; }
+  background-color: #FFFFFF; }
 
 .img-holder {
   left: 0%;
