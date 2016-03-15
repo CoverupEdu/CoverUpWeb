@@ -7,7 +7,7 @@
    <ion-content class="content-positive">
 		<div id="imghld" class="img-holder">
 			<img id="imagecont" class="image" ng-click="eventManage($event)" ng-src="{{photoService.image}}">
-			<button ng-repeat="label in labels" class="button energized button-icon icon ion-ios-circle-filled label" ng-init="setStyle($index)" ng-click="openPopover($event, $index)" ng-style="labelStyle[$index]"></button>
+			<button ng-repeat="label in labels" class="button energized button-icon icon ion-ios-circle-filled label" ng-init="setStyle($index)" id="button{{$index}}" ng-click="openPopover($event, $index)" ng-style="labelStyle[$index]"></button>
 		</div>
 	</ion-content>
 </ion-view>

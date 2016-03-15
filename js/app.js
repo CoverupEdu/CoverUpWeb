@@ -43,6 +43,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'templates/study.html',
         controller: 'study-controller'
     })
+	.state('testroot', {
+        url: '/test',
+        templateUrl: 'templates/testroot.html',
+        controller: '???????'
+    })
 
     $urlRouterProvider.otherwise('/home');
 });
@@ -59,6 +64,20 @@ app.controller('popover-controller', function($scope, $ionicPopover, $rootScope,
 			}
 		  }, 350);
 	}};
+	
+	$scope.$on('popover.hidden', function() {
+		$rootScope.editButton();
+		if ($rootScope.labelEdit) {$rootScope.labelEdit = false;}
+	});
+	
+	$scope.editStyle = function() {
+		if ($rootScope.labelEdit) {
+			return "button energized button-icon icon ion-android-done";
+		} else {
+			return "button energized button-icon icon ion-edit";
+		}
+	}
+	
 	
 	$rootScope.editButton = function() {
 		$rootScope.curLabel = $scope.insLabel;
@@ -92,3 +111,9 @@ app.directive('resize', function ($window) {
         });
     }
 })
+
+app.controller('name-here-controller', function($scope, $ionicPopover, $rootScope, $timeout) {
+	
+	});
+
+

@@ -1,7 +1,7 @@
 // CONTROLLER: modify-controller
 // Controls the modify page.
 // Injects: $scope, $rootScope, $ionicPopover, Photo, Labels
-app.controller('modify-controller', ['$rootScope', '$window', '$ionicScrollDelegate', '$scope', '$ionicPopover', 'Photo', 'Labels', function($rootScope, $window, $ionicScrollDelegate, $scope, $ionicPopover, Photo, Labels) {
+app.controller('modify-controller', ['$timeout', '$rootScope', '$window', '$ionicScrollDelegate', '$scope', '$ionicPopover', 'Photo', 'Labels', function($timeout, $rootScope, $window, $ionicScrollDelegate, $scope, $ionicPopover, Photo, Labels) {
     $scope.labels = Labels.labels;
     $scope.photoService = Photo;
 	$rootScope.labelEdit = false;
@@ -37,10 +37,6 @@ app.controller('modify-controller', ['$rootScope', '$window', '$ionicScrollDeleg
 			top: ($scope.labels[val].y * 0.01 * document.getElementById('imagecont').getBoundingClientRect().height + 'px')
 		};
 	}
-
-	$scope.$on('popover.hidden', function() {
-		$rootScope.labelEdit = false;
-	});
 	
 	$scope.deleteLabel = function() {
 		$scope.popover.hide();
@@ -65,6 +61,9 @@ app.controller('modify-controller', ['$rootScope', '$window', '$ionicScrollDeleg
         $scope.xpos = (event.offsetX - 20) / (0.01 * document.getElementById('imagecont').getBoundingClientRect().width);
         $scope.ypos = (event.offsetY - 23) / (0.01 * document.getElementById('imagecont').getBoundingClientRect().height);
         Labels.addLabel($scope.xpos, $scope.ypos, "");
+		$timeout(function() {
+			$scope.clickButton($scope.labels.length - 1);
+		}, 0);
 	}
 	
     $scope.openPopover = function(event, index) {
@@ -74,4 +73,11 @@ app.controller('modify-controller', ['$rootScope', '$window', '$ionicScrollDeleg
         $scope.popover.show(event);
 		$rootScope.textFocus();
     }
+	
+	$scope.clickButton = function(ind) {
+		var el = document.getElementById('button'+ind.toString());
+		$timeout(function() {
+			angular.element(el).triggerHandler('click');
+		}, 0);
+	}
 }])
