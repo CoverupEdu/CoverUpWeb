@@ -9,7 +9,8 @@ app.controller('study-controller', ['$rootScope', '$ionicScrollDelegate', '$scop
 	$rootScope.labelEdit = false;
 	$rootScope.curLabel;
 	$scope.labelStyle = [];
-    
+	$scope.openAll = false;
+
 	$scope.setStyleAll = function() {
 		for (i = 0; i < $scope.labels.length; i++) {
 			$scope.setStyle(i);
@@ -33,6 +34,12 @@ app.controller('study-controller', ['$rootScope', '$ionicScrollDelegate', '$scop
     $scope.openPopover = function(event, index) {
         $scope.index = {value:index};
 		$scope.curIndex = index;
-        $scope.popover.show(event);
+		$scope.popover.show(event);
+		console.log(event);
+    }
+
+    $scope.switchOpenAll = function (isIt)
+    {
+        $scope.openAll = isIt;
     }
 }])
