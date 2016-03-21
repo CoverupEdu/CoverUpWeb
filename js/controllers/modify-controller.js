@@ -58,8 +58,8 @@ app.controller('modify-controller', ['$timeout', '$rootScope', '$window', '$ioni
 	$scope.addControl = function(event) {
         $rootScope.labelEdit = true;
 		$rootScope.insReset();
-        $scope.xpos = (event.offsetX - 20) / (0.01 * document.getElementById('imagecont').getBoundingClientRect().width);
-        $scope.ypos = (event.offsetY - 23) / (0.01 * document.getElementById('imagecont').getBoundingClientRect().height);
+        $scope.xpos = (event.offsetX) / (0.01 * document.getElementById('imagecont').getBoundingClientRect().width);
+        $scope.ypos = (event.offsetY) / (0.01 * document.getElementById('imagecont').getBoundingClientRect().height);
         Labels.addLabel($scope.xpos, $scope.ypos, "");
 		$timeout(function() {
 			$scope.clickButton($scope.labels.length - 1);

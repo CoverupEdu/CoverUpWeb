@@ -59,5 +59,13 @@
     margin-right: auto;
 }
 
+.ion-ios-circle-filled:before {
+   font-size: 32px !important;
+   margin-top:-23px !important;
+   margin-left:-20px !important
+}
 
+.popover { 
+margin-left:-10px !important;
+}
        
