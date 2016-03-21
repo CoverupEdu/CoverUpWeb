@@ -1,4 +1,4 @@
-<ion-popover-view ng-controller="popover-controller" class="label-popover">
+<ion-popover-view ng-controller="modify-popover-controller" class="label-popover">
     <h3 ng-hide="labelEdit" class="title">{{labels[curIndex].label}}</h3>
 	<input id="textEntry" type="text" ng-show="labelEdit" ng-model="insLabel" focus-me>
 	<button     ng-class="editStyle()" 

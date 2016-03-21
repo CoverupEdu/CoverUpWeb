@@ -1,0 +1,33 @@
+<ion-view view-title="Test - Location" resize ng-app="app">
+	<ion-content class="content-positive">
+		<div id="imghld2" class="img-holder">
+			<img id="imagecont2" ng-click="clickManage($event, 0, false)" class="image" ng-src="{{photoService.image}}">
+			
+			<div ng-if="!showResult && showButtons">
+			<div ng-repeat="label in labels"
+			class="button energized button-icon icon ion-ios-circle-filled label"   
+			ng-click="clickManage($event, $index, true)" 
+			ng-style="labelStyle[$index]"></div></div>
+			
+			<img src="img/tick.png"
+			ng-if="showTick"
+			class="label" 
+			style="width:30px;height:30px;"
+			ng-click="clickManage($event, 0, true)" 
+			ng-style="labelStyle[curIndex2]"></img>
+			
+			<img src="img/cross.png"
+			ng-if="showCross"
+			class="label" 
+			style="width:30px;height:30px;"
+			ng-click="clickManage($event, 0, true)" 
+			ng-style="crossLoc"></img>
+			
+		</div>
+	</ion-content>
+</div>
+<div class="bar bar-footer bar-coverupOrange" style="height: 80px !important;">
+        <p>Tap the location of: {{labels[curIndex2].label}}</p>
+    </div>
+</ion-view>
+

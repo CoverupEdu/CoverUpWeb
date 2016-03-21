@@ -8721,8 +8721,8 @@ progress {
         box-shadow: none;
         color: #fff; }
   .button.button-energized {
-    border-color: transparent;
-    background-color: #24A1D4;
+    border-color: transpar24A1D4 ent;
+    background-color: #24A1D4 ;
     color: #fff;
     margin: auto;
     margin-top: 10px;
@@ -8735,7 +8735,7 @@ progress {
     .button.button-energized.button-clear {
       border-color: transparent;
       background: none;
-      box-shadow: nzone;
+      box-shadow: none;
       color: #ff6600; }
     .button.button-energized.button-icon {
       border-color: transparent;
