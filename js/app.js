@@ -26,7 +26,8 @@ app.config(function($stateProvider, $urlRouterProvider) {
     $stateProvider
     .state('index', {
         url: '/home',
-        templateUrl: 'templates/home.html'
+        templateUrl: 'templates/home.html',
+        controller: 'home-controller'
     })
     .state('photo', {
         url: '/photo',

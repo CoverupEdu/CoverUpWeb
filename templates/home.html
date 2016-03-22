@@ -5,9 +5,17 @@
         ALSO: fix forward/back buttons on other pages
     -->
     </ion-content>
-    <div class="bar bar-footer bar-coverupOrange" style="height: 80px !important;">
-        <a class="button button-clear button-bold button-coverupOrange pull-left" href="#"><i class="ion-bag"></i><br>Marketplace</a>
-        <a class="button button-clear button-bold button-coverupOrange pull-center" href="#"><i class="ion-person"></i><br>My Sets</a>
-        <a class="button button-clear button-bold button-coverupOrange pull-right" href="#/photo"><i class="ion-plus-round"></i><br>Create</a>
-    </div>
+<div id="home-dropdown">
+            <ul>
+                <li class="active"><a href="#"><i class="ion-bag"></i><br>Marketplace</a></li>
+                <li class="active"><a href="#"><i class="ion-person"></i><br>My Sets</a></li>
+                <li class="has-sub"><a href="#"><i class="ion-plus-round"></i><br>Create</a>
+                    <ul>
+                        <li class="has-sub"><a href="#"><span>From Gallery</span></a></li>
+                        <li class="has-sub"><a href="#"><span>Take Photo</span></a></li>
+                        <li class="has-sub"><a href="#/modify" ng-click="setToDefaultPhoto()"><span>Default (debug)</span></a></li>
+                        <ul></ul>
+                    </ul>
+            </ul>
+        </div>                    
 </ion-view>
