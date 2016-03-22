@@ -35,7 +35,6 @@ app.controller('study-controller', ['$rootScope', '$ionicScrollDelegate', '$scop
         $scope.index = {value:index};
 		$scope.curIndex = index;
 		$scope.popover.show(event);
-		console.log("updated");
     }
 
     $scope.switchOpenAll = function (isIt)

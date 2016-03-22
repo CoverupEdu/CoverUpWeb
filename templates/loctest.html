@@ -1,10 +1,16 @@
 <ion-view view-title="Test - Location" resize ng-app="app">
+<ion-nav-buttons side="right">
+      <button style="margin-right:25px;"class="button button-clear button-bold button-coverupOrange icon-right ion-ios-arrow-forward" ng-click="toggleButtons()">
+          Show buttons?
+      </button>
+</ion-nav-buttons>
 	<ion-content class="content-positive">
 		<div id="imghld2" class="img-holder">
 			<img id="imagecont2" ng-click="clickManage($event, 0, false)" class="image" ng-src="{{photoService.image}}">
 			
 			<div ng-if="!showResult && showButtons">
 			<div ng-repeat="label in labels"
+			style="margin-top:-23px !important; margin-left:-20px !important" 
 			class="button energized button-icon icon ion-ios-circle-filled label"   
 			ng-click="clickManage($event, $index, true)" 
 			ng-style="labelStyle[$index]"></div></div>
@@ -12,14 +18,14 @@
 			<img src="img/tick.png"
 			ng-if="showTick"
 			class="label" 
-			style="width:30px;height:30px;"
+			style="width:30px;height:30px;margin-top:-15px !important; margin-left:-15px !important"
 			ng-click="clickManage($event, 0, true)" 
 			ng-style="labelStyle[curIndex2]"></img>
 			
 			<img src="img/cross.png"
 			ng-if="showCross"
 			class="label" 
-			style="width:30px;height:30px;"
+			style="width:30px;height:30px;margin-top:-15px !important; margin-left:-15px !important"
 			ng-click="clickManage($event, 0, true)" 
 			ng-style="crossLoc"></img>
 			

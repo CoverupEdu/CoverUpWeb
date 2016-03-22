@@ -2,7 +2,7 @@
 // Controls home page. (This is essentially a copy of photo-controller, without the photo preview.)
 // Injects: $scope, $rootScope, Photo 
 
-app.controller('home-controller', ['$scope', 'Photo', function($scope, Photo) {
+app.controller('home-controller', ['$state', '$scope', 'Photo', function($state, $scope, Photo) {
     $scope.takePhoto = function() {
         var options = {
         destinationType: navigator.camera.DestinationType.FILE_URI,
@@ -30,6 +30,6 @@ app.controller('home-controller', ['$scope', 'Photo', function($scope, Photo) {
     
     $scope.setToDefaultPhoto = function() {
         Photo.setImage("img/default.jpg");
-        $state.go('/modify');
+        $state.go('modify');
     }
 }]);

@@ -19,6 +19,8 @@ app.controller('loctest-controller', ['$timeout', '$ionicScrollDelegate', '$scop
 		}
 	}, 0)
 	
+	$scope.toggleButtons = function() {$scope.showButtons = !$scope.showButtons;}
+	
 	$scope.selectLabel = function() {
 		if ($scope.testIndex.length == 0) {
 			console.log("unfinished");
@@ -36,6 +38,7 @@ app.controller('loctest-controller', ['$timeout', '$ionicScrollDelegate', '$scop
 			$scope.testIndex.splice($scope.curIndex1, 1);
 			$scope.selectLabel();
 		} 
+		else if ($scope.showButtons && !button) {}
 		else {
 			$scope.showResult = true;
 			if (!button) {
@@ -44,8 +47,8 @@ app.controller('loctest-controller', ['$timeout', '$ionicScrollDelegate', '$scop
 				if (x <= 6400) {$scope.answerResult = true;} 
 				else {$scope.answerResult = false;}
 				$scope.crossLoc = {
-					left: (event.offsetX - 15 + 'px'),
-					top: (event.offsetY - 15 + 'px')
+					left: (event.offsetX  + 'px'),
+					top: (event.offsetY + 'px')
 				};
 			} else {
 				if ($scope.curIndex2 == num) {$scope.answerResult = true;}
@@ -59,13 +62,6 @@ app.controller('loctest-controller', ['$timeout', '$ionicScrollDelegate', '$scop
 			if ($scope.answerResult == false) {$scope.showCross = true;}
 			else {$scope.showCross = false;}
 		}
-	}
-	
-	$scope.clickScreen = function(event) {
-		var el = document.getElementById('imagecont2');
-		$timeout(function() {
-			angular.element(el).triggerHandler('click');
-		}, 0);
 	}
 	
 	$timeout(function() {
