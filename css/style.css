@@ -208,8 +208,34 @@ margin-left:0px !important;
 margin-top:-10px !important;
 }
 
-#modPop{
-    background-color: white;
+.modPop{
+    background-color: rgb(240,240,240);
     border-radius:3px;
-    box-shadow: 0 3px 3px 3px rgba(0, 0, 0, 0.4)!important;
+    width: 175px;
+    position:absolute;
+    left: -12px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, .4);
+}
+.modPop:before { /*Small arrow above dropdown menu*/
+    position: absolute;
+    display: block;
+    top: -20px;
+    left: 50%;
+    margin-left: -10px;
+    
+    content:"";
+    border-color: transparent transparent rgb(250, 250, 250)  transparent;
+    border-style: solid;
+    border-width: 10px;
+}
+.modPop input[type=text] {
+    background: rgb(235,235,235);
+    border-radius: 3px;
+    border-left: 4px solid rgb(235,235,235);
+    width: 175px;
+    
+    transition: border-left 0.25s;
+}
+.modPop input[type=text]:focus {
+    border-left: 4px solid #F79522
 }
