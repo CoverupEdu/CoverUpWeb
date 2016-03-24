@@ -14,6 +14,12 @@ app.controller('modify-popover-controller', function($scope, $ionicPopover, $roo
 	$scope.$on('popover.hidden', function() {
 		$rootScope.editButton();
 		if ($rootScope.labelEdit) {$rootScope.labelEdit = false;}
+		$timeout(function() {
+			if ($rootScope.popOpen) {
+				$rootScope.checkNull();
+				$rootScope.popOpen = false;
+			}
+		})
 	});
 	
 	$scope.editStyle = function() {

@@ -10,6 +10,7 @@ app.controller('modify-controller', ['$timeout', '$rootScope', '$window', '$ioni
 	$rootScope.curLabel;
 	$scope.checkFocused;
 	$scope.labelStyle = [];
+	$rootScope.popOpen = false;
 	
 	$ionicPopover.fromTemplateUrl('templates/modify-popover.html', {
         scope: $scope
@@ -50,6 +51,10 @@ app.controller('modify-controller', ['$timeout', '$rootScope', '$window', '$ioni
         $scope.labels[$scope.curIndex].label = $rootScope.curLabel;
     }
 	
+	$rootScope.checkNull = function() {
+		if ($scope.labels[$scope.curIndex].label.length == 0) {$scope.deleteLabel();}
+	}
+	
 	$scope.eventManage = function($event) {
 		$scope.addControl($event); 
 		//popup?
@@ -63,15 +68,18 @@ app.controller('modify-controller', ['$timeout', '$rootScope', '$window', '$ioni
 		$timeout(function() {
 			$scope.clickButton($scope.labels.length - 1);
 		}, 0);
+		$rootScope.editButton();
 	}
 	
     $scope.openPopover = function(event, index) {
+		$rootScope.popOpen = true;
 		$scope.checkFocused=true;
         $scope.index = {value:index};
 		$scope.curIndex = index;
+		$rootScope.insReset();
         $scope.popover.show(event);
 		$rootScope.textFocus();
-		if ($scope.labels[index].label.length == 0) {$rootScope.editButton();}
+		$rootScope.curLabel = $scope.labels[$scope.curIndex].label;
     }
 	
 	$scope.clickButton = function(ind) {
