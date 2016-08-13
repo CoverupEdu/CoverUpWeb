@@ -3,7 +3,6 @@
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 /*Styling for ionic headers on all pages*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-
 .bar.bar-coverupOrange {
     border-color: #FFFFFF;
     background-color: #F79522;
@@ -48,6 +47,7 @@
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*Styling for 'Create' button drop down menu on home page (webapp only)*/
 /*Styling functions for button positioning*/
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 
@@ -71,8 +71,7 @@
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
-/*Styling for 'Create' button drop down menu on home page (webapp only)*/
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
 #home-dropdown {
     position: fixed;   /*~~Positioning*/
     height: 120px;
@@ -103,13 +102,22 @@
 #home-dropdown > ul > li {
     position: relative;   /*~~Positioning*/
     display: inline-block;
-    padding: 0 10px;
-    margin: 30px calc(8%);
+    padding: 2.5px 0px;
+    margin: 27.5px 0px;
     vertical-align: top;
     line-height: 30px;
     text-align: center;
-
+    
+    -webkit-border-radius: 7.5px;   /*~~Styling*/
+    -moz-border-radius: 7.5px;
+    border-radius: 7.5px;
+    width: 200px;
+    border: 1px solid #FFFFFF;
 }
+#home-dropdown > ul > li span {
+    display: block;
+}
+
 #home-dropdown > ul > li > a {
     color: #FFFFFF;   /*~~Styling*/
     
@@ -142,16 +150,16 @@
     -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, .4);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, .4);
 
-    -webkit-transition: all .3s .1s;   /*~~Animations*/
-    -moz-transition: all .3s .1s;
-    -o-transition: all .3s .1s;
-    transition: all .3s .1s;
-    }
+    -webkit-transition: all .25s;   /*~~Animations*/
+    -moz-transition: all .25s;
+    -o-transition: all .25s;
+    transition: all .25s;
+}
 #home-dropdown > ul > li:hover > ul {
     opacity: 1;   /*Menu is now visible - previously defined visibility being overriden*/
     visibility: visible;
         
-    bottom: 65px; /*The difference between this bottom: value and the bottom: value in the previous class determines how far the menu moves in the slide in animation*/
+    bottom: 75px; /*The difference between this bottom: value and the bottom: value in the previous class determines how far the menu moves in the slide in animation*/
 }
 #home-dropdown > ul > li > ul:before {  /*This adds the small arrow on the bottom of the dropdown menu*/
     position: absolute;   /*~~Positioning*/
@@ -193,6 +201,130 @@
 }
 #home-dropdown ul ul li:hover {
     border-left: 4px solid #F79522; /*Colour change to orange now makes it visible when moused over.*/
+}
+.toggle-home-btn, .toggle-home-btn > a > span {   /*This class gets toggled when a button is hovered over / clicked*/
+    -webkit-transition: all .25s;   /*~~Animations*/
+    -moz-transition: all .25s;
+    -o-transition: all .25s;
+    transition: all .25s;
+}
+.toggle-home-btn {
+    background-color: #FFFFFF;   /*~~Styling*/
+}
+.toggle-home-btn > a > span {
+    color: #F79522;   /*~~More Styling*/
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+/*Styling for set page*/
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+.setPhoto {
+    display: inline-block;
+    position: relative;
+    border: 1px solid white;   
+    background-color: #F79522;
+    
+    text-align: center;
+        
+    height: 400px;
+    width: 375px;
+        
+    margin: 10px;
+    padding: 12px 12px 80px 12px;
+    
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, .4);
+    -moz-box-shadow: 0px 1px 3px rgba(0, 0, 0, .4);
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, .4);
+}
+
+.setPhoto > img {
+    height: 100%;
+    width: 100%;
+    
+    border: 1px solid white;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    
+}
+
+.setPhoto > a {
+    position: relative;
+    display: inline-block;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    
+    width: 85px;
+    padding: 24px 0 24px 0;
+    
+    -webkit-transition: all .25s;   /*~~Animations*/
+    -moz-transition: all .25s;
+    -o-transition: all .25s;
+    transition: all .25s;
+}
+.setPhoto >a:hover {
+    color: #F79522;
+    background-color: #FFFFFF;
+}
+.setPhoto > a:nth-child(3) {
+    border-left: 1px solid #FFFFFF;
+    border-right: 1px solid #FFFFFF;
+}
+.setPhoto > a:nth-child(4) {
+    border-right: 1px solid #FFFFFF;
+}
+
+
+/*~~~~~~~~~~~~~~~~*/
+/*Styling for loctest page
+/*~~~~~~~~~~~~~~~~*/
+
+#loctestShowAnswerButton {
+    position: absolute;   /*~~Positioning*/
+    padding: 10px 40px;
+    margin: 10px 0;
+    vertical-align: top;
+    line-height: 30px;
+    text-align: center;
+    right: 8%;    
+    width: 170px;
+    
+    -webkit-border-radius: 7.5px;   /*~~Styling*/
+    -moz-border-radius: 7.5px;
+    border-radius: 7.5px;
+    border: 1px solid #FFFFFF;
+    background-color: #F79522;
+    color: #FFFFFF;
+}
+.loctest_para {
+    position: absolute;
+    display: inline-block;
+    margin: 15px 4%;
+    margin-right: 2.5%;
+    width: 120px;
+}
+#label_name {
+    position: relative;
+    overflow: scroll;
+    display: inline-block;
+    margin: 15px calc(8% + 170px) 15px calc(6.5% + 120px) !important;
+}
+.toggle_show_btn, .toggle_show_btn > span {   /*This class gets toggled when a button is hovered over / clicked*/
+    -webkit-transition: all .25s;   /*~~Animations*/
+    -moz-transition: all .25s;
+    -o-transition: all .25s;
+    transition: all .25s;
+}
+.toggle_show_btn {
+    background-color: #FFFFFF !important;   /*~~Styling*/
+}
+.toggle_show_btn > span {
+    color: #F79522;   /*~~More Styling*/
 }
 
 /*~~~~~~~~~~~~~~~~*/
@@ -238,4 +370,21 @@ margin-top:-10px !important;
 }
 .modPop input[type=text]:focus {
     border-left: 4px solid #F79522
+}
+.fakePop {
+    background-color:white; 
+    position:absolute; 
+    top:35px; 
+    right:-70px; 
+    min-height:40px;
+    border-radius:3px; 
+    min-width:180px; 
+    max-width:180px; 
+    color:black; 
+    font-size:25px;
+    vertical-align:middle;
+    line-height:25px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    height:auto;
+    padding-bottom:15px;
 }
