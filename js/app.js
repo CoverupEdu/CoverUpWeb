@@ -44,10 +44,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
         templateUrl: 'templates/study.html',
         controller: 'study-controller'
     })
-	.state('testroot', {
+	.state('test', {
         url: '/test',
-        templateUrl: 'templates/testroot.html',
-        controller: '???????'
+        templateUrl: 'templates/test.html',
+        controller: 'test-controller'
     })
 	.state('loctest', {
         url: '/loctest',
